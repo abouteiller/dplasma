@@ -277,9 +277,12 @@ if( "${CTEST_MPI_LAUNCHER}" MATCHES "^[ \t]*$" )
   message(WARNING "MPI tests will most likely not work: 'CTEST_MPI_LAUNCHER' is not set")
 endif()
 string(REPLACE " " ";" MPI_TEST_CMD_LIST "${CTEST_MPI_LAUNCHER}")
-set(CTEST_GPU_LAUNCHER_OPTIONS
+set(CTEST_CUDA_LAUNCHER_OPTIONS
       "" CACHE STRING
-      "Options to pass to the CTEST_MPI_LAUNCHER to select GPU nodes")
+      "Options to pass to the CTEST_MPI_LAUNCHER to select CUDA nodes")
+    set(CTEST_HIP_LAUNCHER_OPTIONS
+      "" CACHE STRING
+      "Options to pass to the CTEST_MPI_LAUNCHER to select CUDA nodes")
 
 ############################################################################
 # Source files and targets
